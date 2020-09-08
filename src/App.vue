@@ -1,28 +1,50 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="App">
+    <h2 class="App-mainHeading">User CRUD Application</h2>
+    <div class="App-container">
+      <UserList />
+      <UserAdd />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import UserList from '~/pages/users/UserList';
+import UserAdd from '~/components/users/UserAdd';
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    UserList,
+    UserAdd,
+  },
+};
 </script>
+<style lang="scss">
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+@import './assets/styles.scss';
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.App {
+  background-color: #e5f0ff;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 50px 0 0;
+  height: 100%;
+}
+
+.App-mainHeading {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: #236e98;
+}
+
+.App-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 90%;
+  margin: 50px auto 0;
 }
 </style>
