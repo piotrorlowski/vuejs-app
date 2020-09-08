@@ -1,29 +1,21 @@
 <template>
   <div class="UserList">
-    <UserListElement v-for="user in userList" :key="user.id" :user="user" />
+    <h2 class="UserList-heading">Users</h2>
+    <UserListElement v-for="user in users" :key="user.id" :user="user" />
   </div>
 </template>
 
 <script>
 import UserListElement from '~/components/users/UserListElement';
+import { mapState } from 'vuex';
 
 export default {
   name: 'UserList',
   components: {
     UserListElement,
   },
-  data() {
-    return {
-      userList: [
-        { id: 1, name: 'User_1' },
-        { id: 2, name: 'User_2' },
-        { id: 3, name: 'User_3' },
-        { id: 4, name: 'User_4' },
-        { id: 5, name: 'User_5' },
-        { id: 6, name: 'User_6' },
-        { id: 7, name: 'User_7' },
-      ],
-    };
+  computed: {
+    ...mapState('users', ['users']),
   },
 };
 </script>
@@ -34,12 +26,20 @@ export default {
   justify-content: center;
   align-items: center;
   flex-flow: column nowrap;
-  padding: 50px 0;
+  padding: 30px 0;
   width: 45%;
   height: auto;
   background-color: #5284cf;
   border-radius: 5px;
   border: 1px solid #74a1cc;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.33);
+}
+
+.UserList-heading {
+  font-size: 24px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  margin: 0 0 20px;
 }
 </style>

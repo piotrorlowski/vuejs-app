@@ -7,30 +7,53 @@
       label-for="userFirstName"
       label-class="UserAdd-inputLabel"
     >
-      <b-form-input id="userFirstName" class="UserAdd-input" trim></b-form-input>
+      <b-form-input
+        id="userFirstName"
+        v-model="userFirstName"
+        class="UserAdd-input"
+        trim
+      ></b-form-input>
     </b-form-group>
     <b-form-group
       id="fieldset-1"
       class="UserAdd-inputGroup"
-      label="Enter your second name"
-      label-for="userSecondName"
+      label="Enter your last name"
+      label-for="userLastName"
       label-class="UserAdd-inputLabel"
     >
-      <b-form-input id="userSecondName" class="UserAdd-input" trim></b-form-input>
+      <b-form-input
+        id="userLastName"
+        v-model="userLastName"
+        class="UserAdd-input"
+        trim
+      ></b-form-input>
     </b-form-group>
-    <b-button class="UserAdd-button">Add new user</b-button>
+    <b-button class="UserAdd-button" @click="addUser({ userFirstName, userLastName })">
+      Add new user
+    </b-button>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'UserAdd',
+  data() {
+    return {
+      userFirstName: '',
+      userLastName: '',
+    };
+  },
+  methods: {
+    ...mapActions('users', ['addUser']),
+  },
 };
 </script>
 <style lang="scss" scoped>
 .UserAdd {
   width: 50%;
-  height: 500px;
+  height: 400px;
   background-color: #5284cf;
   border-radius: 5px;
   border: 1px solid #74a1cc;
@@ -61,7 +84,7 @@ export default {
   }
 }
 
-.UserAdd-button {
+/deep/ .UserAdd-button {
   width: 350px;
   height: 50px;
   font-size: 24px;
@@ -72,11 +95,17 @@ export default {
   color: #236e98;
   font-weight: 600;
   outline: unset;
-  &:hover {
-    background-color: #b1fdfc;
-    border: 1px solid #b1fdfc;
-    outline: unset;
-    color: #236e98;
+  &.btn {
+    &.btn-secondary {
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: #b1fdfc;
+        border: 1px solid #b1fdfc;
+        outline: unset;
+        color: #236e98;
+      }
+    }
   }
 }
 </style>

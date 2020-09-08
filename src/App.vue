@@ -28,7 +28,7 @@ export default {
   background-color: #e5f0ff;
   font-family: 'Source Sans Pro', sans-serif;
   padding: 50px 0 0;
-  height: 100%;
+  min-height: 1000px;
 }
 
 .App-mainHeading {
@@ -42,7 +42,7 @@ export default {
 .App-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-flow: row wrap;
   width: 90%;
   margin: 50px auto 0;

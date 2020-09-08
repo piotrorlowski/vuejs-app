@@ -1,13 +1,15 @@
 <template>
   <div class="UserListElement">
-    <p class="UserListElement-userName">{{ user.name }}</p>
-    <button class="UserListElement-deleteUserButton">
+    <p class="UserListElement-userName">{{ user.firstName }} {{ user.lastName }}</p>
+    <button class="UserListElement-deleteUserButton" @click="deleteUser(user)">
       <i class="UserListElement-deleteIcon material-icons">clear</i>
     </button>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'UserListElement',
   props: {
@@ -15,6 +17,9 @@ export default {
       type: Object,
       required: true,
     },
+  },
+  methods: {
+    ...mapActions('users', ['deleteUser']),
   },
 };
 </script>
@@ -31,6 +36,11 @@ export default {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.33);
   margin: 0 0 20px;
   padding: 0 10px 0;
+  border-radius: 5px;
+  &:hover {
+    background-color: #b1fdfc;
+    cursor: pointer;
+  }
 }
 .UserListElement-deleteUserButton {
 }
