@@ -42,8 +42,6 @@ export default {
     cursor: pointer;
   }
 }
-.UserListElement-deleteUserButton {
-}
 .UserListElement-userName {
   color: #236e98;
   font-size: 24px;

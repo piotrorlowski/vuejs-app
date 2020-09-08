@@ -1,5 +1,6 @@
 <template>
   <div class="UserAdd">
+    <h2 class="UserAdd-heading">Add new user</h2>
     <b-form-group
       id="fieldset-1"
       class="UserAdd-inputGroup"
@@ -53,7 +54,7 @@ export default {
 <style lang="scss" scoped>
 .UserAdd {
   width: 50%;
-  height: 400px;
+  min-height: 450px;
   background-color: #5284cf;
   border-radius: 5px;
   border: 1px solid #74a1cc;
@@ -65,6 +66,13 @@ export default {
 }
 .UserAdd-inputGroup {
   width: 90%;
+}
+.UserAdd-heading {
+  font-size: 32px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  margin: 0 0 20px;
 }
 
 /deep/ .UserAdd-inputLabel {

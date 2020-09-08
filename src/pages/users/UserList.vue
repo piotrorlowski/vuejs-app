@@ -36,7 +36,7 @@ export default {
 }
 
 .UserList-heading {
-  font-size: 24px;
+  font-size: 32px;
   text-align: center;
   color: #fff;
   font-weight: 600;
