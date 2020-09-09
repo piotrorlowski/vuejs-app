@@ -35,7 +35,7 @@ export default {
   text-align: center;
   font-size: 40px;
   font-weight: 700;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   color: #236e98;
 }
 
