@@ -1,5 +1,5 @@
 <template>
-  <div class="UserListElement">
+  <div class="UserListElement" @click="goTo()">
     <p class="UserListElement-userName">{{ user.firstName }} {{ user.lastName }}</p>
     <button class="UserListElement-deleteUserButton" @click="deleteUser(user)">
       <i class="UserListElement-deleteIcon material-icons">clear</i>
@@ -20,6 +20,9 @@ export default {
   },
   methods: {
     ...mapActions('users', ['deleteUser']),
+    goTo() {
+      this.$router.push({ name: 'userDetails', params: { id: this.user.id } });
+    },
   },
 };
 </script>

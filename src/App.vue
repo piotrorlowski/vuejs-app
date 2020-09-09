@@ -2,21 +2,14 @@
   <div class="App">
     <h2 class="App-mainHeading">User CRUD Application</h2>
     <div class="App-container">
-      <UserList />
-      <UserAdd />
+      <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script>
-import UserList from '~/pages/users/UserList';
-import UserAdd from '~/components/users/UserAdd';
 export default {
   name: 'App',
-  components: {
-    UserList,
-    UserAdd,
-  },
 };
 </script>
 <style lang="scss">
@@ -37,14 +30,5 @@ export default {
   font-weight: 700;
   letter-spacing: 5px;
   color: #236e98;
-}
-
-.App-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-flow: row wrap;
-  width: 90%;
-  margin: 50px auto 0;
 }
 </style>
