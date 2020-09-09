@@ -4,7 +4,7 @@
     <b-form-group
       id="fieldset-1"
       class="UserAdd-inputGroup"
-      label="Enter your first name"
+      label="Enter first name"
       label-for="userFirstName"
       label-class="UserAdd-inputLabel"
     >
@@ -18,7 +18,7 @@
     <b-form-group
       id="fieldset-1"
       class="UserAdd-inputGroup"
-      label="Enter your last name"
+      label="Enter last name"
       label-for="userLastName"
       label-class="UserAdd-inputLabel"
     >
