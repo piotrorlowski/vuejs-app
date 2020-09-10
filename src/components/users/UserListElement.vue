@@ -1,6 +1,6 @@
 <template>
-  <div class="UserListElement" @click="goTo()">
-    <p class="UserListElement-userName">{{ user.firstName }} {{ user.lastName }}</p>
+  <div class="UserListElement">
+    <p class="UserListElement-userName" @click="goTo()">{{ user.firstName }} {{ user.lastName }}</p>
     <button class="UserListElement-deleteUserButton" @click="deleteUser(user)">
       <i class="UserListElement-deleteIcon material-icons">clear</i>
     </button>
@@ -48,7 +48,11 @@ export default {
 .UserListElement-userName {
   color: #236e98;
   font-size: 24px;
+  width: 100%;
+  height: 100%;
   font-weight: 600;
+  display: flex;
+  align-items: center;
 }
 .UserListElement-deleteIcon {
   font-weight: 600;
